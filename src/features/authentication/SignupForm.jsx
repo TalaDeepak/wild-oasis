@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useSignup } from "./useSignUp";
+import { useSignup } from "./useSignUp.js";
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -42,7 +42,7 @@ function SignupForm() {
           {...register("email", {
             required: "This field is required",
             pattern: {
-              value: /\S+@\S+\.\S+/,
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
               message: "Please provide a valid email address",
             },
           })}
